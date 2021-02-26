@@ -1,12 +1,15 @@
 <h2>Products</h2>
 
 <div *ngFor="let product of products">
+  <img src = {{product.imagePath}} width = 300px>
   <h3>
-      <a [title]="product.name + ' details'">
+      <a [title]="product.name + ' details'" href= {{product.linkPath}}>
       {{ product.name }}
     </a>
   </h3>
-
+  <p *ngIf="product.rating">
+    <strong>Rating:</strong> {{ product.rating }}
+  </p>
   <p *ngIf="product.description">
     Description: {{ product.description }}
   </p>
@@ -14,7 +17,7 @@
   <button (click)="share()">
     Share
   </button>
-
+  <p></p>
   <app-product-alerts
   [product]="product"
   (notify)="onNotify()">
