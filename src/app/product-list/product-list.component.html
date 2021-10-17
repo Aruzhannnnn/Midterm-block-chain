@@ -18,6 +18,22 @@
     Share
   </button>
   <p></p>
+  <div>
+  <strong>Wtite quantity :</strong>
+  <input type="number" (ngSubmit)="total"/>
+  </div>
+  <div>
+  <strong>Wtite weight :</strong>
+  <input type="number" (ngSubmit)="total"/>
+  <strong> kg</strong>
+  </div>
+  <strong>Wtite departure date :</strong>
+  <form [formGroup]="_MyregisterForm" (ngSubmit)="onSubmit()">
+  <input type="date" formControlName="today_Date">
+  <button type="submit">Submit</button>
+</form>
+
+
   <app-product-alerts
   [product]="product"
   (notify)="onNotify()">
